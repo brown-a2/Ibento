@@ -26,3 +26,12 @@ require get_stylesheet_directory() . '/inc/disable-comments.php';
  * ACF custom fields
  */
 require get_stylesheet_directory() . '/inc/acf/acf-custom-fields.php';
+
+/**
+ * Custom blocks
+ */
+require get_stylesheet_directory() . '/inc/featured-birthdays.php';
+
+
+
+

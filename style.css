@@ -8,3 +8,59 @@ Author URI: http://github.com/browna2
 Template: twentytwentyfour
 Version: 1.0.0
 */
+
+
+/* General styles for the birthday list */
+.birthday-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.birthday-item {
+    background-color: #f9f9f9;
+    /* Light background for list items */
+    padding: 10px;
+    border: 1px solid #ddd;
+    /* Border around each item */
+    border-radius: 5px;
+    /* Rounded corners */
+    margin-bottom: 10px;
+    /* Space between list items */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* Space between title, date, and age */
+}
+
+.birthday-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.birthday-date {
+    color: #666;
+}
+
+.birthday-age {
+    font-style: italic;
+    color: #333;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 600px) {
+    .birthday-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .birthday-title {
+        font-size: 1.4em;
+    }
+
+    .birthday-date,
+    .birthday-age {
+        font-size: 1.1em;
+    }
+}
