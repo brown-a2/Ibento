@@ -31,6 +31,24 @@ function ibento_calculate_age_on_birthday($birthday_date) {
     return $age->y . ' years, ' . $age->m . ' months, ' . $age->d . ' days';
 }
 
+function ibentoConvertDate($postDate) {
+    // Check if the date is set in the $_POST array
+    if (isset($postDate)) {
+        // Create a DateTime object from the input date
+        $date = DateTime::createFromFormat('Ymd', $postDate);
+;        
+        // Check if the date is valid
+        if ($date) {
+            // Format the date to 'F j, Y'
+            return $date->format('F j, Y');
+        } else {
+            return 'Invalid date format';
+        }
+    } else {
+        return 'Date not provided';
+    }
+}
+
 
 // Render callback function for the dynamic block
 function ibento_birthday_block_render_callback($attributes) {
@@ -56,6 +74,7 @@ function ibento_birthday_block_render_callback($attributes) {
         while ($query->have_posts()) {
             $query->the_post();
             $birthday_date = get_field('birthday_date');
+
             if ($birthday_date) {
                 $birthday_day_month = date('md', strtotime($birthday_date));
                 // Include all dates for the rolling year
@@ -97,10 +116,11 @@ function ibento_birthday_block_render_callback($attributes) {
             foreach ($birthday_posts as $post) {
                 $age_on_birthday = ibento_calculate_age_on_birthday($post['date']);
                 $output .= '<li class="birthday-item">';
-                $output .= '<span class="birthday-title">' . esc_html($post['title']) . '</span> - ';
-                $output .= '<span class="birthday-date">' . esc_html($post['date']) . '</span> ';
-                $output .= '<span class="birthday-age">(' . esc_html($age_on_birthday) . ')</span>';
+                $output .= '<span class="birthday-title">' . esc_html($post['title']) . '</span> ';
+                $output .= '<span class="birthday-date">' . esc_html(ibentoConvertDate($post['date'])) . '</span> ';
+                $output .= '<span class="birthday-age">| ' . esc_html($age_on_birthday) . '</span>';
                 $output .= '</li>';
+                
             }
             $output .= '</ul>';
         } else {
