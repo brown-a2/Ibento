@@ -18,10 +18,9 @@ Version: 1.0.0
 }
 
 .birthday-item {
-    background-color: #f9f9f9;
     /* Light background for list items */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     /* Border around each item */
     border-radius: 5px;
     /* Rounded corners */
@@ -36,15 +35,6 @@ Version: 1.0.0
 .birthday-title {
     font-weight: bold;
     font-size: 1.2em;
-}
-
-.birthday-date {
-    color: #666;
-}
-
-.birthday-age {
-    font-style: italic;
-    color: #333;
 }
 
 /* Responsive styles for larger screens */
