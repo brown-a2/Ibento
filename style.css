@@ -12,6 +12,8 @@ Version: 1.0.0
 
 /* General styles for the birthday list */
 .birthday-list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -46,6 +48,14 @@ Version: 1.0.0
     font-size: 1.2em;
 }
 
+.birthday-date-title {
+    color: #ff6b8e;
+}
+
+.birthday-date-number {
+    color: #ff6b8e;
+}
+
 /* Responsive styles for larger screens */
 @media (min-width: 600px) {
     .birthday-item {
@@ -63,6 +73,10 @@ Version: 1.0.0
         font-size: 1.4em;
         flex: 1 1 33.33%;
         /* First column takes up one-third of the available space */
+    }
+
+    .birthday-list a {
+        text-decoration: none;
     }
 
     .birthday-date,
