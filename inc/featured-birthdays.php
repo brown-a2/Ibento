@@ -63,7 +63,7 @@ function ibentoConvertDate($postDate) {
 
 function ibento_birthday_block_render_callback() {
     // Get today's date and current day-month
-    $posts_to_show = 6;
+    $posts_to_show = 16;
 
     $today_day_month = date('md'); // Format today's day and month as 'MMDD'
 
