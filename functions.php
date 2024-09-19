@@ -7,17 +7,19 @@ function ibento_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 
     // Get the child theme stylesheet path
-    $child_style_path = get_stylesheet_directory() . '/style.css';
+    $child_style_path = get_stylesheet_directory() . '/dist/bundle.css';
 
     // Get the modification time of the child theme stylesheet
     $child_style_version = filemtime($child_style_path);
 
     // Enqueue child theme styles with the modification time as the version
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), $child_style_version);
+    //wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'), $child_style_version);
+
+    wp_enqueue_script('ibento-js-scripts', get_stylesheet_directory_uri() . '/dist/bundle.js', array(), '1.0.0', true);
+
+    // Enqueue the bundled CSS file
+    wp_enqueue_style('ibento-css-styles', get_stylesheet_directory_uri() . '/dist/bundle.css', array('parent-style'), $child_style_version);
 }
-
-add_action('wp_enqueue_scripts', 'ibento_enqueue_styles');
-
 
 add_action('wp_enqueue_scripts', 'ibento_enqueue_styles');
 

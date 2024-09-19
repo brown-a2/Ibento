@@ -1,0 +1,73 @@
+.wp-block-site-title {
+    background-color: hotpink;
+}
+
+// General styles for the birthday list
+.birthday-list {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    // Responsive styles for larger screens
+    @media (min-width: 600px) {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.birthday-item {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    // Responsive styles for larger screens
+    @media (min-width: 600px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.birthday-image {
+    max-width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+
+    // Ensure image does not grow or shrink on larger screens
+    @media (min-width: 600px) {
+        flex: 0 0 auto;
+    }
+}
+
+.birthday-title {
+    font-weight: bold;
+    font-size: 1.2em;
+
+    // Responsive styles for larger screens
+    @media (min-width: 600px) {
+        font-size: 1.4em;
+        flex: 1 1 33.33%;
+    }
+}
+
+.birthday-date-title,
+.birthday-date-number {
+    color: #ff6b8e;
+}
+
+.birthday-date,
+.birthday-age {
+
+    // Responsive styles for larger screens
+    @media (min-width: 600px) {
+        font-size: 1.1em;
+        flex: 1 1 33.33%;
+    }
+}
